@@ -1,0 +1,24 @@
+{
+  "name": "lab-aug",
+  "version": "1.0.0",
+  "description": "This is a test package",
+  "main": "hello-world-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon hello-world-node.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dheerajsk/node-lab-aug.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dheerajsk/node-lab-aug/issues"
+  },
+  "homepage": "https://github.com/dheerajsk/node-lab-aug#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

@@ -1,0 +1,3 @@
+ID1, Employee1, 10000, Sales
+ID2, Employee2, 20000, Sales
+ID3, Employee3, 30000, Sales
