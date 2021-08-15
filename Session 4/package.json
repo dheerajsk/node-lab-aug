@@ -1,0 +1,15 @@
+{
+  "name": "session-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib-request.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "querystring": "^0.2.1",
+    "request": "^2.88.2"
+  }
+}
