@@ -7,7 +7,11 @@ module.exports = class Product{
         this.price = price;
     }
 
-    getAll(){
+    static getAll(){
         return products;
+    }
+
+    add(){
+        products.push(this);
     }
 }
