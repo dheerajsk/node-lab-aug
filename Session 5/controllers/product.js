@@ -18,9 +18,9 @@ exports.getUpdateForm = (req, res) => {
     res.end();
 }
 
-
 exports.add = (req, res) => {
-    const product = new Product(req.body.name, req.body.detail, req.body.price);
+    const product = new Product
+        (req.body.name, req.body.detail, req.body.price);
     product.add();
     res.render('list-product', { products: Product.getAll() });
 }
@@ -28,5 +28,11 @@ exports.add = (req, res) => {
 exports.update = (req, res) => {
     const product = new Product(req.body.name, req.body.detail, req.body.price);
     Product.update(product);
+    res.render('list-product', { products: Product.getAll() });
+}
+
+exports.delete = (req, res) => {
+    const name = req.query.name;
+    Product.delete(name);
     res.render('list-product', { products: Product.getAll() });
 }

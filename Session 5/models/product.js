@@ -20,6 +20,11 @@ module.exports = class Product {
         products[productToUpdateIndex] = product;
     }
 
+    static delete(name) {
+        const productToDeleteIndex = products.findIndex(p => p.name == name);
+        products.splice(productToDeleteIndex, 1);
+    }
+
     add() {
         products.push(this);
     }
