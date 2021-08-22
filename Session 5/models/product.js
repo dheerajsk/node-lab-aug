@@ -26,6 +26,8 @@ module.exports = class Product {
     }
 
     add() {
+        console.log("model-add");
+        console.log(this);
         products.push(this);
     }
 }
