@@ -9,10 +9,16 @@ html
                 tr
                     th Name
                     th Details 
-                    th Price 
-            each product in products 
-                tbody 
+                    th Price
+                    th Update
+                    th Delete
+            tbody 
+                each product in products 
                     tr
                         td #{product.name}
                         td #{product.detail}
-                        td #{product.price}    
+                        td #{product.price}
+                        td
+                            a(href="/product/update?name="+product.name class="btn btn-primary" role="button") Update
+                        td
+                            a(href="#" class="btn btn-danger" role="button") Delete

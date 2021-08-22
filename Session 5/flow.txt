@@ -1,0 +1,5 @@
+1. Index.js (listens to client's requests)
+2. Redirect request to route file
+3. Request is redirected to controller's method depending on route path and request type.
+4. In controller, request is processed, model is used, and response is sent.
+5. Client receives response and renders it on browser.
