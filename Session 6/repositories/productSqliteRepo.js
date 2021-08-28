@@ -14,6 +14,21 @@ exports.add = (product) => {
     });
 }
 
+exports.update = (product, cb) => {
+    const db = config.getDB();
+    const updateQuery = `Update Products SET detail='${product.detail}'
+    , price='${product.price}' where name='${product.name}'`;
+    db.run(updateQuery, err => {
+        if (err) {
+            console.log(err);
+            cb(err);
+        }else{
+            console.log("Product updated");
+            cb();
+        }
+    })
+}
+
 exports.getAll = (cb) => {
     const db = config.getDB();
     const query = "SELECT * FROM Products";

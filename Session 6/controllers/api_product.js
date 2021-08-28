@@ -18,8 +18,13 @@ exports.add = ((req, res) => {
 exports.update = ((req, res) => {
     const product = new Product
         (req.body.name, req.body.detail, req.body.price);
-    Product.update(product);
-    res.send(Product.get(product.name));
+    sqliteRepo.update(product, (err) => {
+        if (err) {
+            res.status(503).send(err);
+        } else {
+            res.send();
+        }
+    })
 });
 
 exports.delete = ((req, res) => {
