@@ -22,8 +22,20 @@ exports.update = (product, cb) => {
         if (err) {
             console.log(err);
             cb(err);
-        }else{
+        } else {
             console.log("Product updated");
+            cb();
+        }
+    })
+}
+
+exports.delete = (name, cb) => {
+    const db = config.getDB();
+    const dquery = `DELETE FROM Products WHERE name='${name}'`;
+    db.run(dquery, err => {
+        if (err) {
+            cb(err);
+        } else {
             cb();
         }
     })

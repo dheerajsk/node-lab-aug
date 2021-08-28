@@ -29,6 +29,12 @@ exports.update = ((req, res) => {
 
 exports.delete = ((req, res) => {
     const name = req.query.name;
-    Product.delete(name);
+    sqliteRepo.delete(name, (err) => {
+        if (err) {
+            res.status(503).send(err);
+        } else {
+            res.send();
+        }
+    })
     res.send();
 })
