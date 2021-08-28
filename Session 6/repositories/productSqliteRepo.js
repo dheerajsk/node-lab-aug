@@ -13,3 +13,15 @@ exports.add = (product) => {
         }
     });
 }
+
+exports.getAll = (cb) => {
+    const db = config.getDB();
+    const query = "SELECT * FROM Products";
+    db.all(query, [], (err, rows) => {
+        if (err) {
+            console.log(err);
+        } else {
+            cb(rows);
+        }
+    })
+}

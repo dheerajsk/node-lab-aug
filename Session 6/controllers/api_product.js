@@ -3,7 +3,9 @@ const Product = require("../models/product");
 const sqliteRepo = require("../repositories/productSqliteRepo");
 
 exports.get = ((req, res) => {
-    res.send(Product.getAll());
+    sqliteRepo.getAll((products) => {
+        res.status(200).send(products);
+    });
 });
 
 exports.add = ((req, res) => {
