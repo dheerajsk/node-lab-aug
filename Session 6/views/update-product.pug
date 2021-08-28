@@ -1,0 +1,20 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        title Update Product
+    body
+        include header.pug
+        div(style="padding: 5%; padding-top: 0")
+            form(method="POST" action="/product/update")
+                div.form-group
+                    label Name
+                    input.form-control(name="name" value=product.name type="text" placeholder="Enter name")
+                div.form-group
+                    label Detail
+                    input.form-control(name="detail" value=product.detail type="text" placeholder="Enter Description")
+                div.form-group
+                    label Price
+                    input.form-control(name="price" value=product.price type="number" placeholder="Enter Price")
+                button(class="btn btn-primary" type="submit") Update Product

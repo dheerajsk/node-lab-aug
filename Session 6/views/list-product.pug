@@ -1,0 +1,24 @@
+html
+    head
+        title Products
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css")
+    body
+        include header.pug
+        table(class="table table-dark table-striped")
+            thead 
+                tr
+                    th Name
+                    th Details 
+                    th Price
+                    th Update
+                    th Delete
+            tbody 
+                each product in products 
+                    tr
+                        td #{product.name}
+                        td #{product.detail}
+                        td #{product.price}
+                        td
+                            a(href="/product/update?name="+product.name class="btn btn-primary" role="button") Update
+                        td
+                            a(href="/product/delete?name="+product.name class="btn btn-danger" role="button") Delete
