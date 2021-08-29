@@ -1,10 +1,11 @@
 const products = [];
 
 module.exports = class Product {
-    constructor(name, detail, price) {
+    constructor(name, detail, price, id) {
         this.name = name;
         this.detail = detail;
         this.price = price;
+        this._id = id;
     }
 
     static getAll() {

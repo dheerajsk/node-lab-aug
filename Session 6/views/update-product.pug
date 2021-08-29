@@ -8,6 +8,7 @@ html
         include header.pug
         div(style="padding: 5%; padding-top: 0")
             form(method="POST" action="/product/update")
+                input.form-control(name="id", type="hidden", value=product._id)
                 div.form-group
                     label Name
                     input.form-control(name="name" value=product.name type="text" placeholder="Enter name")

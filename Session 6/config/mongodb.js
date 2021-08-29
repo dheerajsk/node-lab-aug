@@ -8,7 +8,6 @@ exports.connect = () => {
         .then(
             (client) => {
                 mongoClient = client;
-                console.log(mongoClient);
                 this.getCollection("Products");
                 console.log("Mongodb connected");
             }
@@ -18,6 +17,5 @@ exports.connect = () => {
 }
 
 exports.getCollection = (name) => {
-    console.log(mongoClient);
     return mongoClient.db('ProductDB').collection(name);
  }

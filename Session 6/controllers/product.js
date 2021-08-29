@@ -14,10 +14,11 @@ exports.getAddForm = (req, res) => {
 }
 
 exports.getUpdateForm = (req, res) => {
-    var name = req.query.name;
-    var product = Product.get(name);
-    res.render('update-product', { product: product });
-    res.end();
+    var id = req.query.id;
+    dbRepo.get(id, (product) => {
+        res.render('update-product', { product: product });
+        res.end();
+    })
 }
 
 exports.add = (req, res) => {
@@ -31,9 +32,12 @@ exports.add = (req, res) => {
 }
 
 exports.update = (req, res) => {
-    const product = new Product(req.body.name, req.body.detail, req.body.price);
-    Product.update(product);
-    res.render('list-product', { products: Product.getAll() });
+    const product = new Product(req.body.name, req.body.detail, req.body.price, req.body.id);
+    dbRepo.update(product, ()=>{
+        dbRepo.getAll((products) => {
+            res.render('list-product', { products: products });
+        })
+    })
 }
 
 exports.delete = (req, res) => {
