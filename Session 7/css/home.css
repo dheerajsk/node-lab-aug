@@ -1,0 +1,11 @@
+.home{
+    color: red;
+    font: 100;
+    background-color: azure;
+}
+
+.home-menu{
+    color: blue;
+    border: 1px solid gray;
+    background-color: greenyellow;
+}
