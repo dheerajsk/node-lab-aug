@@ -14,8 +14,8 @@ app.set('views', 'views');
 // sqliteConfig.connect();
 mongoConfig.connect();
 
-// app.use(bodyParser.urlencoded({extended: false}));
-app.use(jsonBodyParser);
+app.use(bodyParser.urlencoded({extended: false}));
+// app.use(jsonBodyParser);
 app.use('/api/Product', apiProductRoutes)
 app.use('/product', productRoutes);
 app.use('/', (req, res) => {

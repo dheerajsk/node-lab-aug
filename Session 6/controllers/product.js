@@ -1,5 +1,6 @@
 
 const Product = require("../models/product");
+const dbRepo = require("../repositories/productMongoDBRepo");
 
 exports.getProducts = (req, res) => {
     // res.sendFile('views/list-product.html', {root: './'});
@@ -21,8 +22,9 @@ exports.getUpdateForm = (req, res) => {
 exports.add = (req, res) => {
     const product = new Product
         (req.body.name, req.body.detail, req.body.price);
-    product.add();
-    res.render('list-product', { products: Product.getAll() });
+    dbRepo.add(product, () => {
+        res.render('list-product', { products: Product.getAll() });
+    });
 }
 
 exports.update = (req, res) => {
