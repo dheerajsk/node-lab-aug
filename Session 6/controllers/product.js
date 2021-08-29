@@ -33,7 +33,7 @@ exports.add = (req, res) => {
 
 exports.update = (req, res) => {
     const product = new Product(req.body.name, req.body.detail, req.body.price, req.body.id);
-    dbRepo.update(product, ()=>{
+    dbRepo.update(product, () => {
         dbRepo.getAll((products) => {
             res.render('list-product', { products: products });
         })
@@ -41,7 +41,10 @@ exports.update = (req, res) => {
 }
 
 exports.delete = (req, res) => {
-    const name = req.query.name;
-    Product.delete(name);
-    res.render('list-product', { products: Product.getAll() });
+    const id = req.query.id;
+    dbRepo.delete(id, () => {
+        dbRepo.getAll((products) => {
+            res.render('list-product', { products: products });
+        })
+    });
 }

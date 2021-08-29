@@ -22,6 +22,14 @@ exports.update = (product, callback) => {
         })
 }
 
+exports.delete = (id, callback)=> {
+    const collection = db.getCollection("Products");
+    collection.deleteOne({ _id: ObjectId(id) })
+        .then(() => {
+            callback();
+        });
+}
+
 exports.getAll = (cb) => {
     const collection = db.getCollection("Products");
     collection.find().toArray()
