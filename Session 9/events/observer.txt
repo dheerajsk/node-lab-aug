@@ -1,0 +1,10 @@
+
+1. Observable object - Amazon Product
+2. Observers/Listeners/Subscribers - Customers.
+3. EventEmitter - Amazon Process
+
+Flow
+1. Listener subscribes to product(observable object)
+2. Object's state changes
+3. EventEmitter emits/notifies to all Listeners
+4. Listeners can update themselves.
