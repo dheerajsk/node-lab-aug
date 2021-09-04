@@ -1,0 +1,7 @@
+1. Create User, Role, User2Role, Trait, Tole2Trait
+
+User-> name, id, username, password(hashed)
+Role-> name, id
+Trait-> Product-Add, Admin-Product-Update, Product-Delete, Product-Get
+Role2Trait-> RoleProduct-> [Trait-Prod-Add, Trait-Product-Update, Product-Get]
+User2Role-> User1, [RoleProduct, RoleAdmin]

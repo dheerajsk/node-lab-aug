@@ -16,11 +16,15 @@ mongoConfig.connect();
 app.use(jsonBodyParser);
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use('/', (req, res) => {
+    // Get username from request
+    // Get traits of user-> role-> traits(Product/Post)
+    // Get request path (api/Product/POST)
+    // check if user's traits includes(Product/POST) then let request continue, else return 401
+});
 app.use('/api/Product', apiProductRoutes)
 app.use('/product', productRoutes);
-app.use('/', (req, res) => {
-    res.status(200).send("<h1>Hello world from Express</h1>");
-});
+
 
 app.listen("8030");
 console.log("Express is listening on 8030");
